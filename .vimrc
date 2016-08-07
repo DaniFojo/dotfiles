@@ -8,6 +8,7 @@ set ruler
 set backspace=2
 set scrolloff=4
 set mouse=a
+set virtualedit=all
 map <ScrollWheelUp> <C-Y>
 map <ScrollWheelDown> <C-E>
 
