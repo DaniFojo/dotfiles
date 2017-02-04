@@ -26,7 +26,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
-Plug 'w0ng/vim-hybrid'
+Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 
@@ -35,8 +35,7 @@ call plug#end()
 let g:enable_bold_font = 1
 
 set background=dark
-let g:hybrid_custom_term_colors = 1
-colorscheme hybrid
+colorscheme solarized 
 map <C-n> :NERDTreeToggle<CR>
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
