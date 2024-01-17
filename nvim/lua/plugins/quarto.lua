@@ -67,9 +67,6 @@ return {
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "otter" } }))
     end,
   },
-
-  -- send code from python/r/qmd documets to a terminal or REPL
-  -- like ipython, R, bash
   {
     "neovim/nvim-lspconfig",
     opts = {
