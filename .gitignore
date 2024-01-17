@@ -1,0 +1,14 @@
+gcloud
+github-copilot
+karabiner/automatic_backups
+karabiner/assets/complex_modifications
+lazygit/state.yml
+zsh/.zcompdump
+zsh/.zcompdump.dat
+zsh/.zcompdump.zwc
+qalculate/
+zsh/ohmyzsh
+zsh/.zshrc.pre-oh-my-zsh
+zsh/.zcompdump-Daniel’s MacBook Pro-5.9
+tmux/plugins
+nvim/lazy-lock.json

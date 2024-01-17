@@ -1,0 +1,96 @@
+{
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.9.5",
+  "schemes" : [
+    {
+      "if" : {
+        "device" : {
+          "productID" : "0x2203",
+          "vendorID" : "0x2ea8",
+          "category" : "mouse",
+          "productName" : "Xtrfy MZ1"
+        }
+      },
+      "pointer" : {
+        "disableAcceleration" : true,
+        "acceleration" : 1
+      },
+      "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1
+        },
+        "modifiers" : {
+          "vertical" : {
+            "command" : {
+              "type" : "preventDefault"
+            }
+          }
+        },
+        "speed" : {
+          "vertical" : 0
+        },
+        "distance" : {
+          "vertical" : 3
+        },
+        "reverse" : {
+          "vertical" : true
+        }
+      }
+    },
+    {
+      "pointer" : {
+        "disableAcceleration" : true
+      },
+      "if" : {
+        "device" : {
+          "serialNumber" : "000000000000",
+          "productID" : "0xa6",
+          "productName" : "Razer Viper V2 Pro",
+          "category" : "mouse",
+          "vendorID" : "0x1532"
+        }
+      },
+      "scrolling" : {
+        "acceleration" : {
+          "vertical" : 1
+        },
+        "reverse" : {
+          "vertical" : true
+        },
+        "distance" : {
+          "vertical" : 3
+        },
+        "speed" : {
+          "vertical" : 0
+        }
+      }
+    },
+    {
+      "pointer" : {
+        "disableAcceleration" : true
+      },
+      "if" : {
+        "device" : {
+          "serialNumber" : "000000000000",
+          "productID" : "0xa5",
+          "category" : "mouse",
+          "productName" : "Razer Viper V2 Pro",
+          "vendorID" : "0x1532"
+        }
+      },
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
+        },
+        "speed" : {
+          "vertical" : 0
+        },
+        "distance" : {
+          "vertical" : 3
+        },
+        "acceleration" : {
+          "vertical" : 1
+        }
+      }
+    }
+  ]
+}
