@@ -5,12 +5,16 @@ return {
     dependencies = { "3rd/image.nvim" },
     build = ":UpdateRemotePlugins",
     init = function()
-      -- these are examples, not defaults. Please see the readme
       vim.g.molten_image_provider = "image.nvim"
-      vim.g.molten_output_win_max_height = 20
     end,
     keys = {
-      { mode = { "n" }, "<leader>mi", "<cmd>MoltenInit<CR>", silent = true, desc = "Initialize the plugin" },
+      {
+        mode = { "n" },
+        "<leader>mi",
+        "<cmd>MoltenInit<CR>",
+        silent = true,
+        desc = "Initialize the plugin",
+      },
       {
         mode = { "n" },
         "<leader>me",
@@ -18,8 +22,20 @@ return {
         silent = true,
         desc = "Run operator selection",
       },
-      { mode = { "n" }, "<leader>mrl", "<cmd>MoltenEvaluateLine<CR>", silent = true, desc = "Evaluate line" },
-      { mode = { "n" }, "<leader>mrr", "<cmd>MoltenReevaluateCell<CR>", silent = true, desc = "Re-evaluate cell" },
+      {
+        mode = { "n" },
+        "<leader>mrl",
+        "<cmd>MoltenEvaluateLine<CR>",
+        silent = true,
+        desc = "Evaluate line",
+      },
+      {
+        mode = { "n" },
+        "<leader>mrr",
+        "<cmd>MoltenReevaluateCell<CR>",
+        silent = true,
+        desc = "Re-evaluate cell",
+      },
       {
         mode = { "v" },
         "<leader>mr",
@@ -27,8 +43,20 @@ return {
         silent = true,
         desc = "Evaluate visual selection",
       },
-      { mode = { "n" }, "<leader>mrd", "<cmd>MoltenDelete<CR>", silent = true, desc = "Delete cell" },
-      { mode = { "n" }, "<leader>moh", "<cmd>MoltenHideOutput<CR>", silent = true, desc = "Hide output" },
+      {
+        mode = { "n" },
+        "<leader>mrd",
+        "<cmd>MoltenDelete<CR>",
+        silent = true,
+        desc = "Delete cell",
+      },
+      {
+        mode = { "n" },
+        "<leader>moh",
+        "<cmd>MoltenHideOutput<CR>",
+        silent = true,
+        desc = "Hide output",
+      },
       {
         mode = { "n" },
         "<leader>mos",
@@ -42,8 +70,14 @@ return {
     -- see the image.nvim readme for more information about configuring this plugin
     "3rd/image.nvim",
     init = function()
-      package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?/init.lua;"
-      package.path = package.path .. ";" .. vim.fn.expand("$HOME") .. "/.luarocks/share/lua/5.1/?.lua;"
+      package.path = package.path
+        .. ";"
+        .. vim.fn.expand("$HOME")
+        .. "/.luarocks/share/lua/5.1/?/init.lua;"
+      package.path = package.path
+        .. ";"
+        .. vim.fn.expand("$HOME")
+        .. "/.luarocks/share/lua/5.1/?.lua;"
     end,
     opts = {
       backend = "kitty", -- whatever backend you would like to use
@@ -59,7 +93,7 @@ return {
     "folke/which-key.nvim",
     opts = {
       defaults = {
-        ["<leader>m"] = { name = "Molten", mode = "nv" },
+        ["<leader>m"] = { name = "Molten", mode = { "n", "v" } },
         ["<leader>mr"] = { name = "Run", mode = "n" },
         ["<leader>mo"] = { name = "Output", mode = "n" },
       },
