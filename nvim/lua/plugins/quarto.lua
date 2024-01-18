@@ -64,22 +64,28 @@ return {
     dependencies = { "jmbuhr/otter.nvim" },
     opts = function(_, opts)
       local cmp = require("cmp")
-      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "otter" } }))
+      opts.sources = cmp.config.sources(
+        vim.list_extend(opts.sources, { { name = "otter" } })
+      )
     end,
   },
   {
     "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
+    opts = function(_, opts)
+      vim.list_extend(opts.servers, {
         marksman = {
           -- also needs:
           -- $home/.config/marksman/config.toml :
           -- [core]
           -- markdown.file_extensions = ["md", "markdown", "qmd"]
           filetypes = { "markdown", "quarto" },
-          root_dir = require("lspconfig.util").root_pattern(".git", ".marksman.toml", "_quarto.yml"),
+          root_dir = require("lspconfig.util").root_pattern(
+            ".git",
+            ".marksman.toml",
+            "_quarto.yml"
+          ),
         },
-      },
-    },
+      })
+    end,
   },
 }

@@ -7,11 +7,23 @@ return {
   },
   {
     "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        julials = {},
-      },
-    },
+    opts = function(_, opts)
+      vim.list_extend(opts.servers, { julia_lsp = {}, ocamllsp = {} })
+    end,
+  },
+  {
+    "williamboman/mason.nvim",
+    opts = function(_, opts)
+      opts.ensure_installed = opts.ensure_installed or {}
+      vim.list_extend(opts.ensure_installed, {
+        "pyright",
+        "ruff-lsp",
+        "ruff",
+        "ocaml-lsp",
+        "debugpy",
+        "julia-lsp",
+      })
+    end,
   },
   { "echasnovski/mini.pairs", enabled = false },
   {
@@ -21,15 +33,16 @@ return {
         "bash",
         "html",
         "javascript",
-        "julia",
         "json",
+        "julia",
         "lua",
         "markdown",
         "markdown_inline",
+        "ocaml",
         "python",
         "query",
-        "typescript",
         "regex",
+        "typescript",
         "vim",
         "yaml",
       })
@@ -53,7 +66,12 @@ return {
       local has_words_before = function()
         unpack = unpack or table.unpack
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+        return col ~= 0
+          and vim.api
+              .nvim_buf_get_lines(0, line - 1, line, true)[1]
+              :sub(col, col)
+              :match("%s")
+            == nil
       end
 
       local luasnip = require("luasnip")
